@@ -5,7 +5,7 @@
 Orient from outside in:
 
 1. Read scripts in `package.json:6-18`.
-2. Read env requirements in `.env.local.example:18-68`.
+2. Read env requirements in `docs/CONFIGURATION.md` (the upstream `.env.local.example` is not in this snapshot; `grep -rn "process.env" lib app` is the ground truth).
 3. Read global shell in `app/layout.tsx:54-105`.
 4. Read homepage route in `app/page.tsx:6-18`.
 5. Read `components/chat.tsx:38-586` in chunks: state, `useChat`, effects, submit, render.

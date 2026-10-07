@@ -114,7 +114,7 @@ Practice: propose a concurrency limit for advanced crawling.
 
 Concept: config determines which features can run.
 
-Where it appears: `.env.local.example:18-161`, `docker-compose.yaml:15-28`, `drizzle.config.ts:6-18`, `vitest.config.mts:5-21`.
+Where it appears: `docs/CONFIGURATION.md` + `process.env.*` reads (upstream `.env.local.example` absent here), `docker-compose.yaml:15-28`, `drizzle.config.ts:6-18`, `vitest.config.mts:5-21`.
 
 Junior miss: local success may depend on Docker-provided services. Senior notice: docs should distinguish Docker and non-Docker setup.
 

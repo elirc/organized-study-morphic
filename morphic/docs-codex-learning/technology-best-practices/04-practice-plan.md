@@ -2,7 +2,7 @@
 
 ## Day 1
 
-Focus area: scripts and setup. Files to read: `package.json:6-18`, `.env.local.example:18-68`. Concept: dev workflow. Exercise: write the commands from install to test. Self-check: why `bun run test`? Optional Codex prompt: "Quiz me on this repo's scripts."
+Focus area: scripts and setup. Files to read: `package.json:6-18`, `docs/CONFIGURATION.md` (upstream `.env.local.example` is absent from this snapshot). Concept: dev workflow. Exercise: write the commands from install to test. Self-check: why `bun run test`? Optional Codex prompt: "Quiz me on this repo's scripts."
 
 ## Day 2
 

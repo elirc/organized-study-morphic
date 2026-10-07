@@ -28,7 +28,7 @@ Three places code runs; confusing them is the #1 junior mistake in App Router co
 
 ## Environment variables (high level, no secrets)
 
-Grouped from [.env.local.example](../../.env.local.example):
+Grouped from the `process.env.*` reads in `lib/`, `app/` and [docs/CONFIGURATION.md](../../docs/CONFIGURATION.md). Upstream ships a `.env.local.example`, but dotfiles were not imported into this snapshot, so every name below was re-verified by grepping `process.env.<NAME>` in the code:
 
 - **Model providers:** `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`, `AI_GATEWAY_API_KEY`, `OLLAMA_BASE_URL`, `OPENAI_COMPATIBLE_*`. Presence of a key *is* the feature flag — [isProviderEnabled](../../lib/utils/registry.ts#L56-L76).
 - **Search:** `SEARCH_API` picks the provider; `TAVILY_API_KEY`, `EXA_API_KEY`, `BRAVE_SEARCH_API_KEY`, `FIRECRAWL_API_KEY`, `SEARXNG_*` family.

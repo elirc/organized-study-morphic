@@ -38,7 +38,7 @@ Running log of what was inspected while authoring this curriculum. Anything not 
 - [app/page.tsx](../../app/page.tsx), [app/search/[id]/page.tsx](../../app/search/[id]/page.tsx)
 - [app/api/upload/route.ts](../../app/api/upload/route.ts), [app/api/chats/route.ts](../../app/api/chats/route.ts), [app/api/feedback/route.ts](../../app/api/feedback/route.ts)
 - [hooks/use-file-dropzone.ts](../../hooks/use-file-dropzone.ts)
-- [vitest.config.mts](../../vitest.config.mts), [.github/workflows/ci.yml](../../.github/workflows/ci.yml), [.env.local.example](../../.env.local.example), [package.json](../../package.json), [AGENTS.md](../../AGENTS.md), [README.md](../../README.md)
+- [vitest.config.mts](../../vitest.config.mts), [.github/workflows/ci.yml](../../.github/workflows/ci.yml), `.env.local.example` (referenced upstream; absent from this snapshot), [package.json](../../package.json), [AGENTS.md](../../AGENTS.md), [README.md](../../README.md)
 - [lib/db/__tests__/with-rls.test.ts](../../lib/db/__tests__/with-rls.test.ts) (first 80 lines)
 - [app/api/advanced-search/route.ts](../../app/api/advanced-search/route.ts) (first 120 lines)
 
@@ -68,3 +68,11 @@ Running log of what was inspected while authoring this curriculum. Anything not 
 - `components/inspector/*`, `components/artifact/*` internals
 - Supabase auth UI pages under `app/auth/*` beyond route existence
 - `lib/firecrawl/*`, `lib/ollama/*` internals
+
+## Refinement pass (2026-10-07)
+
+Static only — nothing installed or run.
+
+- All relative links and `#L` anchors in `fabledocs/` and `docs-codex-learning/` were resolved by script against this snapshot: no out-of-range anchors; the only dead targets were `.env.local.example` links. That file is referenced by upstream docs but is **not in this snapshot**, so the env-var section of the runtime map now cites the `process.env.<NAME>` reads instead (each name grepped and found in `lib/` or `app/`).
+- R15 upgraded to *confirmed (code)*: `updateChatTitle` in `lib/db/actions.ts` L374–L388 has no `revalidateTag`, and neither does `persist-stream-results.ts`.
+- New R16: `app/api/chat/route.ts` L208–L212 revalidates the chat tag before `onFinish` persists the answer, while the analytics IIFE at L175–L186 can re-read (and re-cache) the chat. Ordering confirmed by reading; the user-visible staleness was not reproduced.

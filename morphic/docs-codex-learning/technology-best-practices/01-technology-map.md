@@ -134,7 +134,7 @@
 
 **Why It Matters:** Local setup and advanced search depend on external services.
 
-**What to Study First:** `.env.local.example:18-68`, `docker-compose.yaml:4-75`, `app/api/advanced-search/route.ts:30-113`.
+**What to Study First:** `docs/CONFIGURATION.md` (upstream `.env.local.example` is absent from this snapshot), `docker-compose.yaml:4-75`, `app/api/advanced-search/route.ts:30-113`.
 
 **Related Technologies:** Next.js API routes, Redis, search providers.
 

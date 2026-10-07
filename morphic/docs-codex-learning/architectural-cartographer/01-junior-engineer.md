@@ -22,7 +22,7 @@ Important scripts:
 - `bun migrate`: Drizzle migrations (`package.json:14`, `drizzle.config.ts:11-18`).
 - `bun run test`: Vitest (`package.json:15`, `vitest.config.mts:17-21`).
 
-Required local environment is reconstructed from `.env.local.example:18-68`: at least one AI provider key, `DATABASE_URL`, and one search provider or Docker SearXNG. Auth is optional and defaults to anonymous mode in the example (`.env.local.example:73-85`). Docker Compose provides PostgreSQL, Redis, SearXNG, and app wiring (`docker-compose.yaml:4-75`).
+Required local environment is reconstructed from upstream `.env.local.example` (not imported into this snapshot; cross-check `docs/CONFIGURATION.md` and the `process.env.*` reads in `lib/`): at least one AI provider key, `DATABASE_URL`, and one search provider or Docker SearXNG. Auth is optional and defaults to anonymous mode in the example (`.env.local.example:73-85`). Docker Compose provides PostgreSQL, Redis, SearXNG, and app wiring (`docker-compose.yaml:4-75`).
 
 No seed script was found. The app appears to create chat data through normal use.
 
